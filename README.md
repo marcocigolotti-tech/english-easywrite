@@ -1,4 +1,4 @@
-# English EasyWrite — prima versione (A1–A2)
+# English EasyWrite — versione 1.1 (A1–A2)
 
 **Ideato dal Prof. Marco Cigolotti.** Il credito è visibile nell’intestazione e nel piè di pagina del sito. Applicazione gratuita e statica, senza API, senza account e senza tracking applicativo.
 
@@ -11,7 +11,7 @@
 **Per provare localmente:** un doppio clic su index.html potrebbe impedire il caricamento del dizionario per le restrizioni dei browser su file://. Pubblicare su GitHub Pages o usare un server locale, per esempio `python -m http.server 8000` dalla cartella.
 
 ## Limiti dichiarati
-- Il dizionario contiene oltre 76.000 lemmi/forme ricavati da una fonte Hunspell en_US; **non è un motore Hunspell completo** e non espande sistematicamente ogni forma flessa. Le parole ignote sono segnalate solo quando esiste una proposta ragionevole tra parole frequenti per evitare falsi positivi eccessivi. Il controllo ortografico nativo del browser può integrare i suggerimenti.
+- Il dizionario contiene oltre 76.000 lemmi/forme ricavati da una fonte Hunspell en_US; **non è un motore Hunspell completo** e non espande sistematicamente ogni forma flessa. Le parole non riconosciute vengono segnalate anche quando non esiste una proposta sicura. Possono esserci falsi positivi sui nomi propri e sulle forme flesse: non accettare automaticamente una sostituzione generica. Il controllo ortografico nativo del browser può integrare i suggerimenti.
 - Il correttore grammaticale è **a regole limitate**, non è un'IA e non corregge tutte le frasi. Alcune regole potrebbero segnalare false correzioni: le modifiche sono sempre accettate volontariamente.
 - L'audio dipende dalle voci installate su Windows/browser; non sono scaricate voci esterne.
 - Nessun testo scritto viene inviato dall'app a server o memorizzato in banche dati. GitHub Pages tratta comunque dati tecnici dei visitatori; l'uso istituzionale richiede le verifiche privacy del titolare.
@@ -24,3 +24,6 @@
 `I has a beautifull house. She go to school every day. There is two cats.`
 
 Attese: `I have`, `beautiful`, `She goes`, `There are`.
+
+## Test aggiuntivo versione 1.1
+`were are iou from?` → segnalazione di `were` nella domanda (`Where`) e `iou` (`you`). La forma finale attesa è `Where are you from?`.
