@@ -1,4 +1,4 @@
-# English EasyWrite — versione 1.1 (A1–A2)
+# English EasyWrite — versione 1.2 (A1–A2)
 
 **Ideato dal Prof. Marco Cigolotti.** Il credito è visibile nell’intestazione e nel piè di pagina del sito. Applicazione gratuita e statica, senza API, senza account e senza tracking applicativo.
 
@@ -25,5 +25,9 @@
 
 Attese: `I have`, `beautiful`, `She goes`, `There are`.
 
-## Test aggiuntivo versione 1.1
+## Test aggiuntivo versione 1.2
 `were are iou from?` → segnalazione di `were` nella domanda (`Where`) e `iou` (`you`). La forma finale attesa è `Where are you from?`.
+
+## Correzione 1.2
+- Riconosce `Ai have a beautiful house` → `I have a beautiful house` quando "Ai" è usato come soggetto davanti a un verbo. Non sostituisce automaticamente la sigla `AI` (intelligenza artificiale).
+- Le frasi sono valutate con regole locali; non è un correttore grammaticale universale.
