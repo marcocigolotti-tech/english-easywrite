@@ -1,42 +1,15 @@
-# English EasyWrite — versione 1.4 (A1–A2)
+# English EasyWrite 3.0 — Harper
 
-**Ideato dal Prof. Marco Cigolotti.** Il credito è visibile nell’intestazione e nel piè di pagina del sito. Applicazione gratuita e statica, senza API, senza account e senza tracking applicativo.
+**Ideato dal Prof. Marco Cigolotti**
 
-## Pubblicazione su GitHub Pages
-1. Crea un repository pubblico chiamato `english-easywrite` nell'account GitHub gestito dalla scuola (se il progetto è ufficiale).
-2. Carica **insieme nella radice** `index.html` e `english-words.txt`.
-3. In **Settings → Pages → Build and deployment**, scegli **Deploy from a branch**, `main` e `/ (root)`; salva.
-4. Apri l'indirizzo Pages mostrato da GitHub.
+Versione sperimentale con autentico motore **Harper** (harper.js 2.4.0), WebAssembly nel browser. Pubblica `index.html` e `app.js` nella root di GitHub Pages. Apri il sito con connessione internet: il browser scarica il motore dal CDN unpkg.com. **Il testo scritto non viene inviato al CDN o a un servizio di correzione**: Harper lavora localmente una volta caricato.
 
-**Per provare localmente:** un doppio clic su index.html potrebbe impedire il caricamento del dizionario per le restrizioni dei browser su file://. Pubblicare su GitHub Pages o usare un server locale, per esempio `python -m http.server 8000` dalla cartella.
+Il sito è gratuito, non richiede account né API key. I file Harper e il CDN non sono inclusi nello ZIP: l'accesso a unpkg.com è necessario per il caricamento. Per un'installazione completamente autonoma/offline occorre includere gli asset Harper in una build successiva.
 
-## Limiti dichiarati
-- Il dizionario contiene oltre 76.000 lemmi/forme ricavati da una fonte Hunspell en_US; **non è un motore Hunspell completo** e non espande sistematicamente ogni forma flessa. Le parole non riconosciute vengono segnalate anche quando non esiste una proposta sicura. Possono esserci falsi positivi sui nomi propri e sulle forme flesse: non accettare automaticamente una sostituzione generica. Il controllo ortografico nativo del browser può integrare i suggerimenti.
-- Il correttore grammaticale è **a regole limitate**, non è un'IA e non corregge tutte le frasi. Alcune regole potrebbero segnalare false correzioni: le modifiche sono sempre accettate volontariamente.
-- L'audio dipende dalle voci installate su Windows/browser; non sono scaricate voci esterne.
-- Nessun testo scritto viene inviato dall'app a server o memorizzato in banche dati. GitHub Pages tratta comunque dati tecnici dei visitatori; l'uso istituzionale richiede le verifiche privacy del titolare.
+## Avvertenze
 
-## Licenze e riferimenti
-- Dizionario inglese di sistema Hunspell en_US (licenza e attribuzioni riportate nel file `LICENZA-DIZIONARIO-SCOWL.txt`; mantenere questo avviso quando si pubblica il sito).
-- Codice dell'applicazione: originale, offerto con licenza MIT (vedi LICENSE).
+Harper non garantisce che ogni testo errato sia corretto. Errori fonetici o ambigui possono sfuggire. Non utilizzarlo come unica base per valutazioni o strumenti compensativi ufficiali senza collaudo con studenti e verifica accessibilità/privacy. Se compare «Harper non è stato caricato» il correttore **non** funziona: il sito non finge di correggere.
 
-## Verifica rapida
-`I has a beautifull house. She go to school every day. There is two cats.`
+## Crediti e licenze
 
-Attese: `I have`, `beautiful`, `She goes`, `There are`.
-
-## Test aggiuntivo versione 1.4
-`were are iou from?` → segnalazione di `were` nella domanda (`Where`) e `iou` (`you`). La forma finale attesa è `Where are you from?`.
-
-## Correzione 1.3
-- Riconosce `Ai have a beautiful house` → `I have a beautiful house` quando "Ai" è usato come soggetto davanti a un verbo. Non sostituisce automaticamente la sigla `AI` (intelligenza artificiale).
-- Le frasi sono valutate con regole locali; non è un correttore grammaticale universale.
-
-
-## Limite didattico (versione 1.4)
-Questo programma NON è un correttore grammaticale generale. Contiene regole e un elenco controllato di errori frequenti; il dizionario può includere parole rare come magnific. Non usarlo per valutare automaticamente un alunno. Verificare sempre le correzioni con un docente.
-
-## Novità 1.4
-- Propone `Ve had a naice hose` → `We had a nice house` (confermando il significato di *hose*).
-- Le correzioni contestuali possono essere ambigue e richiedono conferma.
-- La versione visibile in alto deve riportare `v1.4`, altrimenti la pubblicazione o la cache non sono aggiornate.
+Progetto e impostazione didattica: **Prof. Marco Cigolotti**. Motore linguistico **Harper**, Automattic e contributori, [Apache-2.0](https://github.com/Automattic/harper/blob/master/LICENSE). La presente integrazione usa i moduli ospitati su unpkg secondo la [documentazione ufficiale](https://writewithharper.com/docs/harperjs/CDN).
