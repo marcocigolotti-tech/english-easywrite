@@ -1,0 +1,1 @@
+Dizionario derivato dall’elenco di lemmi en_US Hunspell presente sul sistema. Sono stati rimossi i flag morfologici: questa applicazione non implementa Hunspell e non garantisce il riconoscimento di ogni parola flessa. Consultare LICENZA-DIZIONARIO-SCOWL.txt per copyright e condizioni di riutilizzo.
